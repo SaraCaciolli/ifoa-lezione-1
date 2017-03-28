@@ -11,7 +11,7 @@ public class Primo {
 				String operazioni = "1+1";
 				System.out.println(operazioni);
 				calcolaRisultato(operazioni);
-				System.out.println(correggiOperazione("1+1"));
+				System.out.println(correggiOperazione(operazioni));
 				System.out.println("-----");
 			}
 
@@ -19,7 +19,7 @@ public class Primo {
 				String operazioni = "1-     4";
 				System.out.println(operazioni);
 				calcolaRisultato(operazioni);
-				System.out.println(correggiOperazione("1+1"));
+				System.out.println(correggiOperazione(operazioni));
 				System.out.println("-----");
 			}
 	}
