@@ -29,7 +29,7 @@ public class Primo {
 		String operazioniCorretto = correggiOperazione(operazioni);
 		
 		double amount = 0;
-		Scanner s= new Scanner(  operazioniCorretto );
+		Scanner s= new Scanner(operazioniCorretto);
 
 
 		if(s.hasNext()) {
