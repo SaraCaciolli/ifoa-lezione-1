@@ -7,20 +7,27 @@ public class GestioneDirectory {
 	private static Scanner scanner;
 	static String titoloLettura = "";
 	static boolean letto = false;
+	
 	public static void main(String[] args) {
-		
+
 		System.out.println("Benvenuto");
 		scanner = new Scanner(System.in);
-		Menu();
 		
-		while(scanner.hasNext()) {
+		System.out.println("Inserisci il percorso dove vuoi andare a operare");
+			String percorso=scanner.nextLine();
+			FunzioniEsplorazioni.Menu(percorso, args);
+		
+
+			while(scanner.hasNext()) {
 			String s = scanner.nextLine();
-			String percorso = "C:\\Users\\admin\\Documents\\EsercitazioniJava\\Sara";
+		
+			//String percorso = "C:\\Users\\admin\\Documents\\EsercitazioniJava\\Sara";
+	
 			if("q".equals(s) || "Q".equals(s)) {
 				System.err.println("Ciao Ciao Alla Prossima");
 			}
 			if("h".equals(s) || "H".equals(s)){
-				Menu();
+				FunzioniEsplorazioni.Menu(percorso, args);
 			}
 			if("v".equals(s) || "V".equals(s)){
 				System.out.println(percorso);
@@ -71,25 +78,12 @@ public class GestioneDirectory {
 				try {
 					FunzioniEsplorazioni.ScriviFile(percorso,titoloScrittura,testo);
 					
-				} catch (Exception e) {
-					System.out.println("Inserisci il titolo del file");
-					e.printStackTrace();
+					} catch (Exception e) {
+						System.out.println("Inserisci il titolo del file");
+						e.printStackTrace();
+					}
 				}
-			}
-		}
-	}
-	
-	public static void Menu() {
-		System.out.println("PREMI: ");
-		System.out.println(" - Q Per Uscire ");
-		System.out.println(" - H Per Vedere il Menù ");
-		System.out.println(" - V Per Visualizza La Lista Completa (Files e Cartelle)");
-		System.out.println(" - C Per Visualizza La Lista delle Cartelle e SottoCartelle");
-		System.out.println(" - F Per Visualizza La Lista dei Files (anche quelli delle sotto cartelle)");
-		System.out.println(" - D Per Visualizza Solo In Questa Directory");
-		System.out.println(" - L Per Leggere Le Prime Righe Di Un File");
-		System.out.println(" - S Per Creare Un Nuovo File");
-		
-	}
+			} 
+	 }
 }
 	

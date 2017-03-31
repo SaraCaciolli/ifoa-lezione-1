@@ -8,7 +8,32 @@ import java.io.PrintWriter;
 
 public class FunzioniEsplorazioni {
       
-      public static void ScriviFile(String dir, String tit, String testo) throws Exception{
+	  private static void restart(String[] strArr)
+	    {
+	        System.out.println("You restarted");
+	        GestioneDirectory.main(strArr);
+	    }
+	
+	public static void Menu(String dir, String[] strArr) {
+		File f = new File(dir);
+		if (f.exists()) {
+			System.out.println("PREMI: ");
+			System.out.println(" - Q Per Uscire ");
+			System.out.println(" - H Per Vedere il Menù ");
+			System.out.println(" - V Per Visualizza La Lista Completa (Files e Cartelle)");
+			System.out.println(" - C Per Visualizza La Lista delle Cartelle e SottoCartelle");
+			System.out.println(" - F Per Visualizza La Lista dei Files (anche quelli delle sotto cartelle)");
+			System.out.println(" - D Per Visualizza Solo In Questa Directory");
+			System.out.println(" - L Per Leggere Le Prime Righe Di Un File");
+			System.out.println(" - S Per Creare Un Nuovo File");
+		 }else{
+			 System.err.println("il percorso non esiste");
+			   restart(strArr);
+		 }
+		
+	}
+	
+	public static void ScriviFile(String dir, String tit, String testo) throws Exception{
     	  FileWriter writer = new FileWriter(dir +"//"+tit+".txt", true);
     	  PrintWriter pw = new PrintWriter(writer);
     	  pw.println(testo);
@@ -51,7 +76,6 @@ public class FunzioniEsplorazioni {
 				}
 			}
 		}
-		
 	}
 	
 	public static void EsploraCartelle(String dir){
