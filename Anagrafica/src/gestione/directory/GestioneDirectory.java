@@ -15,6 +15,7 @@ public class GestioneDirectory {
 		
 		System.out.println("Inserisci il percorso dove vuoi andare a operare");
 			String percorso=scanner.nextLine();
+	
 			FunzioniEsplorazioni.Menu(percorso, args);
 		
 

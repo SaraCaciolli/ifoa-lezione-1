@@ -8,13 +8,12 @@ import java.io.PrintWriter;
 
 public class FunzioniEsplorazioni {
       
-	  private static void restart(String[] strArr)
+private static void restart(String[] strArr)
 	    {
-	        System.out.println("You restarted");
 	        GestioneDirectory.main(strArr);
 	    }
 	
-	public static void Menu(String dir, String[] strArr) {
+	public static void Menu(String dir, String[] strArr)  {
 		File f = new File(dir);
 		if (f.exists()) {
 			System.out.println("PREMI: ");
@@ -28,7 +27,7 @@ public class FunzioniEsplorazioni {
 			System.out.println(" - S Per Creare Un Nuovo File");
 		 }else{
 			 System.err.println("il percorso non esiste");
-			   restart(strArr);
+			  restart(strArr);
 		 }
 		
 	}
