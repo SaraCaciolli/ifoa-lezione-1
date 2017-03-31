@@ -14,7 +14,7 @@ public class Main {
 		MyInteger[] arr = new MyInteger[10];
 		Pila<MyInteger> pila = new Pila<MyInteger>(arr);
 		pila.inserisci(new MyInteger(9));		
-		
+		  
 	}
 	
 	
