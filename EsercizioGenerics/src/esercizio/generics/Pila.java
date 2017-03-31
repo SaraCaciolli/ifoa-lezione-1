@@ -1,6 +1,6 @@
 package esercizio.generics;
 
-public class Pila<T> {
+public class Pila<T extends PrintInterface>  {
 
 	private T[] pila;
 
@@ -12,6 +12,7 @@ public class Pila<T> {
 		for (int i = 0; i < pila.length; i++) {
 			if (pila[i] == null) {
 				pila[i] = oggetto;
+				oggetto.stampaDetails();
 				return true;
 			}
 		}
@@ -32,7 +33,9 @@ public class Pila<T> {
 	public String toString() {
 		String s = "";
 		for (int i = 0; i < pila.length; i++) {
-			s += (pila[i] + " ");
+			if (pila[i] != null) {
+				s += (pila[i] + " ");
+			}
 		}
 		return s;
 	}
