@@ -19,7 +19,7 @@ public class CountingOutputterIntelligente implements Outputter {
 	
 		} else {
 			if(numero>0){
-				buffer += (ultimo + "è stato visto " + numero + " volte \n");
+				buffer += (ultimo + " è stato visto " + numero + " volte \n");
 				System.out.println(ultimo + "è stato visto " + numero + " volte \n");
 				System.out.println("iniziamoto con: " + s);
 		}
@@ -30,7 +30,7 @@ public class CountingOutputterIntelligente implements Outputter {
 	}
 	 
 	public void Flush(){
-		buffer += (ultimo + "è stato visto " + numero + " volte \n");
+		buffer += (ultimo + " è stato visto " + numero + " volte \n");
 		System.out.println("Closing");
 		ultimo = "";
 		System.out.println(buffer);
