@@ -37,7 +37,7 @@ public class MyCollections {
 						}
 						mappa.put(parola, valore);
 					}
-					linea = in.readLine();
+					linea = in.readLine(); 
 				}
 				System.out.println("Size: "+mappa.size());
 				for (String key:mappa.keySet()){
