@@ -27,7 +27,11 @@ public class Primogwt implements EntryPoint {
 //		}
 
 		DockLayoutPanel dlp = new DockLayoutPanel(Unit.PX);
-		dlp.addNorth(new HTML(), 100);
+		
+		ScoreBoard scoreBoard = new ScoreBoard();
+		scoreBoard.setScore(0);
+		
+		dlp.addNorth(scoreBoard, 100);
 		dlp.addSouth(new HTML(), 100);
 		dlp.addEast(new HTML(), 100);
 		dlp.addWest(new HTML(), 100);
