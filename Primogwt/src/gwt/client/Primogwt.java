@@ -3,8 +3,10 @@ package gwt.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.RepeatingCommand;
+import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.shared.SimpleEventBus;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -14,11 +16,28 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
  */
 public class Primogwt implements EntryPoint {
 
+	GreetingServiceAsync servizio = GWT.create(GreetingService.class);
+	
+	
 	int i = 0;
 
 	@Override
 	public void onModuleLoad() {
 
+		servizio.salvaPunteggio("Sara", 99999, new AsyncCallback<Void>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess(Void result) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	
 		SimpleEventBus bus = new SimpleEventBus();
 	
