@@ -10,7 +10,7 @@ public class Bubble  extends HTML {
 	private int current_y;
 	private int current_x;
 
-	private String[] colors = { "red", "blue", "lime", "yellow" , "cyan", "orangered"};
+	private String[] colors = { "red", "blue", "lime", "yellow" };
 	
 	public Bubble(int size, int posx, int posy) {
 		String color = colors[ (int)(Math.random() * 100) % colors.length ] ;
