@@ -5,23 +5,28 @@ import java.util.List;
 
 
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.user.client.ui.FlowPanel;
 
 public class Board extends FlowPanel {
 	
 	List<Bubble> bubbles = new ArrayList<>();
+	private SimpleEventBus bus; 
 	
-	public Board() {
+	public Board(SimpleEventBus bus) {
+		this.bus = bus;
 		this.getElement().getStyle().setWidth(100, Unit.PCT);
 		this.getElement().getStyle().setHeight(100, Unit.PCT);
 		this.getElement().getStyle().setBackgroundColor("black");
 		this.getElement().getStyle().setBorderColor("black");
 	}
 	
+
+
 	public void addBubble(Bubble bubble){
 		bubbles.add(bubble);
 		this.add(bubble);
-		bubble.addClickHandler(new BubbleClickHandler(bubble, this));
+		bubble.addClickHandler(new BubbleClickHandler(bubble, this,bus));
 	}
 	
 	public void removeBubble(Bubble bubble){
