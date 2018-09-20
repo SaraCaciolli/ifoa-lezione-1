@@ -71,4 +71,4 @@ public class Primo {
 //		return res;
 	}
 
-}
+}//5
